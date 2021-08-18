@@ -18,8 +18,8 @@ class DownloadImagesFromTxt extends Command
      *
      * @var string
      */
-    protected $description =  'Command for download images from txt file with URL. Exemple : "php artisan download:txt --file=storage/URI.txt --name=logo --d" 
-    Where "storage/app" is path to directory in local project and "Logo" is new name of download images';
+    protected $description =  'Command for download images from txt file with URL. Exemple : "php artisan download:txt --file=storage/URI.txt --name=logo --directory=strage/app". 
+    Where "--file=storage/URI.txt" is path to directory in local project where we have URL adress in txt file, "--name=logo" is new name of download images and "--directory=strage/app" this is the path where you want save picture in local project';
 
     /**
      * Create a new command instance.
