@@ -2,8 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Console\Commands\Test2;
+
 
 class UploadInDataBaseController extends Controller
 {

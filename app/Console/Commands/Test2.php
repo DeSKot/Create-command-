@@ -3,11 +3,9 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
-use App\Http\Controllers\UploadImageLocallController;
-use App\Http\Controllers\UploadInGoogleDriveController;
-use App\Http\Controllers\UploadInDataBaseController;
-
-
+use  App\Services\Base\DataBase;
+use  App\Services\Base\GoogleDrive;
+use  App\Services\Base\SaveLocal;
 
 class Test2 extends Command
 {
@@ -53,16 +51,13 @@ class Test2 extends Command
 
         switch (trim($save_path)) {
             case 'GD':
-                $save_google = new UploadInGoogleDriveController;
-                $save_google->saveImagesOnGoogleDrive();
+                app(GoogleDrive::class)->saveImagesOnGoogleDrive();
                 break;
             case 'DB':
-                $save_DB = new UploadInDataBaseController;
-                $save_DB->uploadInDataBase();
+                app(DataBase::class)->uploadInDataBase();
                 break;
             default:
-                $save_local = new UploadImageLocallController;
-                $save_local->createImageLocal($file_path, $name_of_file, $save_path);
+                app(SaveLocal::class)->createImageLocal($file_path, $name_of_file, $save_path);
                 break;
         }
     }

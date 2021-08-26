@@ -3,6 +3,7 @@
 namespace App\Console;
 
 use App\Console\Commands\DownloadImagesFromTxt;
+use App\Console\Commands\Test2;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
@@ -14,7 +15,7 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        DownloadImagesFromTxt::class,
+        Test2::class,
     ];
 
     /**
